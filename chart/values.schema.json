@@ -981,6 +981,35 @@
                 "tolerations": {
                     "description": "Select certain nodes for airflow pods.",
                     "type": "array"
+                },
+                "serviceMonitor": {
+                    "description": "Statsd serviceMonitor settings.",
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "description": "Enable statsd serviceMonitor.",
+                            "type": "boolean"
+                        },
+                        "interval": {
+                            "description": "Interval at which metrics should be scraped.",
+                            "type": "string"
+                        },
+                        "scrapeTimeout": {
+                            "description": "Timeout for scraping metrics.",
+                            "type": "string"
+                        },
+                        "namespace": {
+                            "description": "Namespace which ServiceMonitor should be deployed.",
+                            "type": "string"
+                        },
+                        "labels": {
+                            "description": "Additional labels for ServiceMonitor.",
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
                 }
             }
         },

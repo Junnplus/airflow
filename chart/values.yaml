@@ -514,6 +514,17 @@ statsd:
   affinity: {}
   tolerations: []
 
+  serviceMonitor:
+    enabled: false
+    # Interval at which metrics should be scraped.
+    interval: 30s
+    # Timeout for scraping metrics.
+    scrapeTimeout: 10s
+    # Namespace which ServiceMonitor should be deployed.
+    namespace: monitoring
+    # Additional labels for ServiceMonitor.
+    labels: {}
+
 # Pgbouncer settings
 pgbouncer:
   # Enable pgbouncer
